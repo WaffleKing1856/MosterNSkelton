@@ -1,7 +1,13 @@
-
-//Note to future Wright,
-//Everything works, the only thing that needs to be fixed is at line 252 in the STATS function to print out ALL inventory items
-// Features to add: 1) a dungeon, 2) Potions, 3) more animations for spells, 4) balence the game, 5) more classes
+/*
+Mosters and Skeltons 
+Version 1.4.1
+1/29/24
+By Matthew Wright
+*/
+// Most Recent Update, Combat overhaul, changed from Mr G's old system of blocking, to now taking a random number between 0 and your def and just defending that much
+// also added luck and dev mode, luck doesnt do anything though. Just like gold!
+// also commented out some of opening scene so its easier for ssh
+// Features to add: 1) a dungeon, 2) Potions, 3) shop, 4) mosters, 5) skeltons
 #include <cstdlib>
 #include <cstdio>
 #include <iostream>
@@ -13,7 +19,7 @@
 
 using namespace std;
 
-bool speedMode = true;
+bool speedMode = false;
 bool godSpeed = false;
 vector<string> inventory;
 vector<string> fighterDrops;
@@ -109,7 +115,7 @@ void printDots(int howManyDots){
 }
 void openingScene(){
     //11changeSpeed();
-    string tempString;
+   /* string tempString;
     printWithDelay("In a world where mosters roam the earth....\n\n", 50);
     printDots(3);
     printWithDelay("\n\nAnd skeltons lurk around every corner.....\n\n", 50);
@@ -118,6 +124,7 @@ void openingScene(){
     printDots(3);
     printWithDelay("\n\nDo you have what it takes to save the World?",50, "red");
     clearContinue();
+*/
 
     cout << R"(
 ___  ___ _____  _____  _____  _____ ______  _____
@@ -1400,7 +1407,7 @@ Character PC;
 system("clear");
 
 
-//openingScene();    //UNCOMMENT BEFORE RELEASE FOR OPENING SCENE
+openingScene();    //UNCOMMENT BEFORE RELEASE FOR OPENING SCENE
 
 
 
